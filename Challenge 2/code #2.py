@@ -3,7 +3,6 @@ import json
 
 
 def get_instances():
-    result = {}
     ec2 = boto3.resource('ec2')
     data = ec2.instances.filter(Filters=[{'Name':'tag:Project','Values': ['Web']}])
     for instance in data:
@@ -17,8 +16,9 @@ def get_instances():
              "Private_IP": instance.private_ip_address,
              }
         data = json.dumps(ec2_info,indent=4,sort_keys=True)
-        print(data)
 
 get_instances()
 
-
+if __name__ = __main__
+    get_instances()
+    print(data)
